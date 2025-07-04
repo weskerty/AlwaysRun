@@ -1,17 +1,23 @@
 [Unit]
-Description=MyUPDATE.SH
+#Nombre que Aparecera.
+Description=MyAllScripts.SH
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/root/update.sh
+
+#Direccion de Script a Ejecutar.
+ExecStart=/root/all.sh
 WorkingDirectory=/root
 StandardOutput=journal
 StandardError=journal
 RemainAfterExit=yes
+
 User=root
 
+#Tiempo de Espera para cerrar.
+TimeoutStopSec=9999
 Restart=on-failure
 RestartForceExitStatus=9  
 #OOMScoreAdjust=-1000        
